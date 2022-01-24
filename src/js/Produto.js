@@ -1,13 +1,25 @@
 const espacoCards = document.querySelector('.espacoCards')
 
 class Produtos {
+	constructor() {
+		this._produtos = []
+	}
+
+	get produtos() {
+		return this._produtos
+	}
+	set produtos(nova) {
+		this._produtos = nova
+	}
 	static async criarCard() {
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
 		)
 		let produtos = await prod.json()
 		let final = await produtos
-		this.construirCard(final)
+		this._produtos = final
+		Produtos.construirCard(this._produtos)
+		console.log(this._produtos)
 	}
 
 	static construirCard(arr) {
@@ -47,9 +59,19 @@ class Produtos {
 			espacoCards.appendChild(card)
 		}
 	}
+
+	static async filtroCat(cat) {
+		let nome = String(cat)
+		let prod = await fetch(
+			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
+		)
+		let produtos = await prod.json()
+		let final = await produtos
+		console.log(final)
+		let filter = final.filter((item) => item.categoria === nome)
+		console.log(filter)
+		Produtos.construirCard(filter)
+	}
 }
 
-Produtos.criarCard()
-
-
-
+Produtos.filtroCat('Panificadora')
