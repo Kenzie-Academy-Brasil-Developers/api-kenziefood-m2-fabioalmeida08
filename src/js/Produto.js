@@ -1,9 +1,6 @@
 const espacoCards = document.querySelector('.espacoCards')
 
 class Produtos {
-	constructor(produtos) {
-		this._produtos = []
-	}
 	static async criarCard() {
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
