@@ -52,6 +52,7 @@ class Produtos {
 	}
 }
 
+Produtos.criarCard()
 
 
 
