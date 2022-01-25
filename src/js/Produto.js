@@ -1,5 +1,5 @@
 const espacoCards = document.querySelector('.espacoCards')
-
+let db = []
 class Produtos {
 	constructor() {
 		this._produtos = []
@@ -11,15 +11,15 @@ class Produtos {
 	set produtos(nova) {
 		this._produtos = nova
 	}
-	static async criarCard() {
+	static async criarPaginaInicial() {
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
 		)
 		let produtos = await prod.json()
 		let final = await produtos
-		this._produtos = final
-		Produtos.construirCard(this._produtos)
-		console.log(this._produtos)
+		db = final
+		Produtos.construirCard(db)
+		console.log(db)
 	}
 
 	static construirCard(arr) {
@@ -43,7 +43,7 @@ class Produtos {
 			// let linkCarrinhoVerde = document.createElement('a')
 			let btnCarrinhoVerde = document.createElement('button')
 			btnCarrinhoVerde.innerHTML = ''
-			btnCarrinhoVerde.setAttribute('prodid' , i.id)
+			btnCarrinhoVerde.setAttribute('prodid', i.id)
 			// linkCarrinhoVerde.appendChild(btnCarrinhoVerde)
 
 			cardTextBuy.appendChild(h3)
@@ -62,30 +62,44 @@ class Produtos {
 	}
 
 	static async filtroCat(cat) {
+		this.reset()
 		let nome = String(cat)
-		let prod = await fetch(
-			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
-		)
-		let produtos = await prod.json()
-		let final = await produtos
-		console.log(final)
-		let filter = final.filter((item) => item.categoria === nome)
-		console.log(filter)
-		Produtos.construirCard(filter)
+		if (db.length === 0) {
+			let prod = await fetch(
+				'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
+			)
+			let produtos = await prod.json()
+			let final = await produtos
+			let filter = final.filter((item) => item.categoria === nome)
+			Produtos.construirCard(filter)
+		} else {
+			let filter = db.filter((item) => item.categoria === nome)
+			Produtos.construirCard(filter)
+		}
 	}
 
 	static async Busca(busca) {
-		let nome = new RegExp(busca , 'gi')
-		let prod = await fetch(
-			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
-		)
-		let produtos = await prod.json()
-		let final = await produtos
-		console.log(final)
-		let filter = final.filter((item) => nome.test(item.nome))
-		console.log(filter)
-		Produtos.construirCard(filter)
+		this.reset()
+		let nome = new RegExp(busca, 'gi')
+		if (db.length === 0) {
+			let prod = await fetch(
+				'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
+			)
+			let produtos = await prod.json()
+			let final = await produtos
+			let filter = final.filter((item) => nome.test(item.nome))
+			Produtos.construirCard(filter)
+		} else {
+			let filter = db.filter((item) => nome.test(item.nome))
+			Produtos.construirCard(filter)
+		}
+	}
+
+	static reset() {
+		while (espacoCards.lastElementChild) {
+			espacoCards.lastElementChild.remove()
+		}
 	}
 }
 
-Produtos.filtroCat('Panificadora')
+Produtos.criarPaginaInicial()
