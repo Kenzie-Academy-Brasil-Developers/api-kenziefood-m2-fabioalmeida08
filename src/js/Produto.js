@@ -41,7 +41,7 @@ class Produtos {
 
 			let cardTextBuy = document.createElement('div')
 			let h3 = document.createElement('h3')
-			h3.innerHTML = i.preco
+			h3.innerHTML = `R$ ${i.preco.toFixed(2)}`
 
 			// let linkCarrinhoVerde = document.createElement('a')
 			let btnCarrinhoVerde = document.createElement('button')
