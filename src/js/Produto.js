@@ -72,6 +72,19 @@ class Produtos {
 		console.log(filter)
 		Produtos.construirCard(filter)
 	}
+
+	static async Busca(busca) {
+		let nome = new RegExp(busca , 'gi')
+		let prod = await fetch(
+			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
+		)
+		let produtos = await prod.json()
+		let final = await produtos
+		console.log(final)
+		let filter = final.filter((item) => nome.test(item.nome))
+		console.log(filter)
+		Produtos.construirCard(filter)
+	}
 }
 
 Produtos.filtroCat('Panificadora')
