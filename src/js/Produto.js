@@ -1,16 +1,19 @@
 const espacoCards = document.querySelector('.espacoCards')
 let db = []
 class Produtos {
-	constructor() {
-		this._produtos = []
-	}
+	// constructor() {
+	// 	this._produtos = []
+	// }
 
-	get produtos() {
-		return this._produtos
-	}
-	set produtos(nova) {
-		this._produtos = nova
-	}
+	// get produtos() {
+	// 	return this._produtos
+	// }
+	// set produtos(nova) {
+	// 	this._produtos = nova
+	// }
+
+	static produtos = []
+
 	static async criarPaginaInicial() {
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
@@ -102,4 +105,4 @@ class Produtos {
 	}
 }
 
-Produtos.criarPaginaInicial()
+export {Produtos , db}
