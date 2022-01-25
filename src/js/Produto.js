@@ -40,13 +40,14 @@ class Produtos {
 			let h3 = document.createElement('h3')
 			h3.innerHTML = i.preco
 
-			let linkCarrinhoVerde = document.createElement('a')
-			let imgCarrinhoVerde = document.createElement('img')
-			imgCarrinhoVerde.src = '#'
-			linkCarrinhoVerde.appendChild(imgCarrinhoVerde)
+			// let linkCarrinhoVerde = document.createElement('a')
+			let btnCarrinhoVerde = document.createElement('button')
+			btnCarrinhoVerde.innerHTML = ''
+			btnCarrinhoVerde.setAttribute('prodid' , i.id)
+			// linkCarrinhoVerde.appendChild(btnCarrinhoVerde)
 
 			cardTextBuy.appendChild(h3)
-			cardTextBuy.appendChild(linkCarrinhoVerde)
+			cardTextBuy.appendChild(btnCarrinhoVerde)
 
 			cardText.appendChild(h2)
 			cardText.appendChild(p)
