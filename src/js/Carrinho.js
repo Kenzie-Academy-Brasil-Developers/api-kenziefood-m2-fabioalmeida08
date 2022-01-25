@@ -28,10 +28,11 @@ class Carrinho {
         carrinhoCardText.appendChild(p)
         
         const h3 = document.createElement('h3')
-        h3.innerHTML = produto.preco
+        h3.innerHTML = `R$ ${produto.preco.toFixed(2)}`
         carrinhoCardText.appendChild(h3)
 
         const lixo = document.createElement('button')
+        lixo.setAttribute('lixoid', produto.id)
         lixo.innerHTML = '🗑️'
         carrinhoCardText.appendChild(lixo)
 
