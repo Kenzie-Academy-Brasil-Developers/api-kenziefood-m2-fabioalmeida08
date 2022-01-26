@@ -11,8 +11,9 @@ class Carrinho {
 		let final = await produtos
         arrProduto.push( final.find(item => item.id === id) )
         const carrinhoCard =  document.createElement('div')
+        const cbody = document.querySelector('.carrinho-body')
         arrProduto.forEach((produto) => {    
-            carrinhoCard.innerHTML = '';
+            cbody.innerHTML = '';
             carrinhoCard.classList.add('carrinho-card')
             
             const prodImg = document.createElement('img')
@@ -38,13 +39,13 @@ class Carrinho {
             carrinhoCard.appendChild(lixo)
 
             carrinhoCard.appendChild(carrinhoCardText) 
-            const cbody = document.querySelector('.carrinho-body')
+            
             cbody.appendChild(carrinhoCard)
         })
         this.calculoPreco(arrProduto,carrinhoCard)
     }
 
-    static calculoPreco(produtos,carrinhoCard) {
+    static calculoPreco(produtos) {
         let total = 0;
         const carrinhoFooter = document.createElement('div');
         produtos.forEach((produto) => {
@@ -61,8 +62,9 @@ class Carrinho {
             pTotal.innerHTML = `Valor Total R$ ${total}`
             carrinhoQuant.appendChild(pTotal);
 
+            const cbody = document.querySelector('.carrinho-body')
             carrinhoFooter.appendChild(carrinhoQuant);
-            carrinhoCard.appendChild(carrinhoFooter);
+            cbody.appendChild(carrinhoFooter);
     })
     }
 
