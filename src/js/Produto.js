@@ -1,16 +1,7 @@
 const espacoCards = document.querySelector('.espacoCards')
 let db = []
 class Produtos {
-	// constructor() {
-	// 	this._produtos = []
-	// }
 
-	// get produtos() {
-	// 	return this._produtos
-	// }
-	// set produtos(nova) {
-	// 	this._produtos = nova
-	// }
 
 	static produtos = []
 
@@ -43,12 +34,10 @@ class Produtos {
 			let h3 = document.createElement('h3')
 			h3.innerHTML = `R$ ${i.preco.toFixed(2)}`
 
-			// let linkCarrinhoVerde = document.createElement('a')
 			let btnCarrinhoVerde = document.createElement('button')
 			btnCarrinhoVerde.innerHTML = ''
 			btnCarrinhoVerde.setAttribute('prodid', i.id)
-			// linkCarrinhoVerde.appendChild(btnCarrinhoVerde)
-
+			
 			cardTextBuy.appendChild(h3)
 			cardTextBuy.appendChild(btnCarrinhoVerde)
 

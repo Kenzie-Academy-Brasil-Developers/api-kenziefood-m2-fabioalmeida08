@@ -1,5 +1,5 @@
 import { Carrinho } from "./Carrinho.js";
-import { Produtos , db} from "./Produto.js";
+import { Produtos } from "./Produto.js";
 const spacoCards = document.querySelector('.espacoCards')
 const campoBusca = document.querySelector('input')
 
