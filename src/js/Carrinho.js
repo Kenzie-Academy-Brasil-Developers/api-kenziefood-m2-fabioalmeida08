@@ -18,25 +18,42 @@ class Carrinho {
 
 	static calculoPreco(produtos) {
 		const carrinhoFooter = document.createElement('div')
+		carrinhoFooter.classList.add('carrinho-footer')
 		produtos.forEach((produto) => {
 			carrinhoFooter.innerHTML = ''
 			carrinhoFooter.classList.add('carrinho-footer')
 
 			const carrinhoQuant = document.createElement('div')
+			
+			carrinhoQuant.classList.add('carrinho-quant')
 			const p = document.createElement('p')
-			p.innerHTML = `Quantidade de Produtos ${produtos.length}`
+			const span = document.createElement('span')
+			span.innerHTML = `${produtos.length}`
+			p.innerHTML = `Quantidade de Produtos`
 			carrinhoQuant.appendChild(p)
-
+			carrinhoQuant.appendChild(span)
+			
+			
+			const carrinhoTotal = document.createElement('div')
+			carrinhoTotal.classList.add('carrinho-quant')
 			const pTotal = document.createElement('p')
-			pTotal.innerHTML = `Valor Total R$ ${arrProduto.reduce(
+			pTotal.innerHTML = `Valor Total` 
+
+			const preco = document.createElement('span')
+			preco.innerHTML = `R$ ${arrProduto.reduce(
 				(a, b) => a + b.preco,
 				0
 			)}`
-			carrinhoQuant.appendChild(pTotal)
+			
+			carrinhoTotal.appendChild(pTotal)
+			carrinhoTotal.appendChild(preco)
+
+
 
 			const cbody = document.querySelector('.carrinho-body')
 			carrinhoFooter.appendChild(carrinhoQuant)
-			cbody.appendChild(carrinhoFooter)
+			carrinhoFooter.appendChild(carrinhoTotal)
+			cbody.after(carrinhoFooter)
 		})
 	}
 
@@ -46,8 +63,16 @@ class Carrinho {
 
 	static reset() {
 		const cbody = document.querySelector('.carrinho-body')
-		while (cbody.lastElementChild) {
-			cbody.lastElementChild.remove()
+		if (cbody.nextElementSibling) {
+			const preco = cbody.nextElementSibling
+			while (cbody.lastElementChild) {
+				cbody.lastElementChild.remove()
+				preco.remove()
+			}
+		}else{
+			while(cbody.lastElementChild) {
+				cbody.lastElementChild.remove()
+			}
 		}
 	}
 	static createProd() {
