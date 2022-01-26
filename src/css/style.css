@@ -20,11 +20,13 @@ body {
 }
 
 header {
+
     /* border: 1px solid yellow; */
     background-color: white;
     display: flex;
     flex-direction: column;
     width: 92vw;
+
     padding: 17px;
     
 }
@@ -39,6 +41,7 @@ header img {
     flex-direction: row;
     width:341px;
     background-color: var(--cinza2);
+
     border-radius: 33px;
     align-items: center;
 }
@@ -52,13 +55,13 @@ header img {
     width: 44px;
     height: 44px;
     border-radius: 33px;
-    transform: translateX(-90);
 }
 .barraDePesquisa input::placeholder{
     color: var(--cinza3);
 }
 main {
     /* border: 1px solid blueviolet; */
+
     display: flex;
     flex-direction: column;
     padding-left: 18px;
@@ -79,6 +82,7 @@ main div {
 }
 .botao-filtro {
     /* border:2px solid black; */
+
     align-items: center;
     height: 40px;
     border-radius:30px;
