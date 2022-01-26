@@ -181,3 +181,7 @@ main {
     width: 340px;
     height: 432px;
 }
+#input-pesquisa {
+    border-radius: 33px;
+    border: none;
+}
