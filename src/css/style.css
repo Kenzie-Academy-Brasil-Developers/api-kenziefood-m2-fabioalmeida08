@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
 :root {
     --vermelho-primario:#FF2253;
     --rosinha-primario:#FFE9EE;
@@ -71,13 +73,14 @@ main {
 }
 .botao-filtro {
     border:2px solid black;
-    display: flex;
     align-items: center;
     height: 40px;
     border-radius:30px;
     margin-right: 22px;
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
+    cursor: pointer;
 }
 .botao-filtro img {
     width: 10px;
@@ -151,7 +154,7 @@ main {
     border: 1px solid green;
     display: flex;
     flex-direction: column;
-    width: 341px;
+    min-width: 341px;
     padding-top: 27px;
 }
 .carrinho-header {
@@ -177,4 +180,8 @@ main {
     background-color: var(--cinza1);
     width: 340px;
     height: 432px;
+}
+#input-pesquisa {
+    border-radius: 33px;
+    border: none;
 }
