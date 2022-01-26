@@ -642,3 +642,7 @@ main div {
 .carrinho-footer :nth-child(odd) {
 	background-color: #f8f9fa;
 }
+
+button {
+    cursor: pointer;
+}
