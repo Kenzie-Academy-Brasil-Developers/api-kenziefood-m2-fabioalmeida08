@@ -1,79 +1,93 @@
-import {Produtos , db} from './Produto.js'
-const arrProduto = [];
+import { Produtos, db } from './Produto.js'
+const arrProduto = []
 
 class Carrinho {
-    
-    static async addProduto(id) {
-            let prod = await fetch(
+	static async addProduto(id) {
+		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
 		)
 		let produtos = await prod.json()
 		let final = await produtos
-        arrProduto.push( final.find(item => item.id === id) )
-        const carrinhoCard =  document.createElement('div')
-        const cbody = document.querySelector('.carrinho-body')
-        arrProduto.forEach((produto) => {    
-            cbody.innerHTML = '';
-            carrinhoCard.classList.add('carrinho-card')
-            
-            const prodImg = document.createElement('img')
-            prodImg.src = produto.imagem
-            carrinhoCard.appendChild(prodImg)
-            
-            const carrinhoCardText = document.createElement('div')
-            const h2 = document.createElement('h2')
-            h2.innerHTML = produto.nome
-            carrinhoCardText.appendChild(h2)
+		const produto = final.find((item) => item.id === id)
 
-            const p = document.createElement('p')
-            p.innerHTML = produto.categoria
-            carrinhoCardText.appendChild(p)
-            
-            const h3 = document.createElement('h3')
-            h3.innerHTML = `R$ ${produto.preco.toFixed(2)}`
-            carrinhoCardText.appendChild(h3)
+		arrProduto.push(produto)
+        this.createProd()
+		this.calculoPreco(arrProduto)
+	}
 
-            const lixo = document.createElement('button')
-            lixo.setAttribute('lixoid', produto.id)
-            lixo.innerHTML = '🗑️'
-            carrinhoCard.appendChild(lixo)
+	static calculoPreco(produtos) {
+		const carrinhoFooter = document.createElement('div')
+		produtos.forEach((produto) => {
+			carrinhoFooter.innerHTML = ''
+			carrinhoFooter.classList.add('carrinho-footer')
 
-            carrinhoCard.appendChild(carrinhoCardText) 
-            
-            cbody.appendChild(carrinhoCard)
-        })
-        this.calculoPreco(arrProduto,carrinhoCard)
-    }
+			const carrinhoQuant = document.createElement('div')
+			const p = document.createElement('p')
+			p.innerHTML = `Quantidade de Produtos ${produtos.length}`
+			carrinhoQuant.appendChild(p)
 
-    static calculoPreco(produtos) {
-        let total = 0;
-        const carrinhoFooter = document.createElement('div');
-        produtos.forEach((produto) => {
-            total = total + produto.preco;
-            carrinhoFooter.innerHTML = '';
-            carrinhoFooter.classList.add('carrinho-footer');
+			const pTotal = document.createElement('p')
+			pTotal.innerHTML = `Valor Total R$ ${arrProduto.reduce(
+				(a, b) => a + b.preco,
+				0
+			)}`
+			carrinhoQuant.appendChild(pTotal)
 
-            const carrinhoQuant = document.createElement('div');
-            const p = document.createElement('p');
-            p.innerHTML = `Quantidade de Produtos ${produtos.length}`;
-            carrinhoQuant.appendChild(p);
+			const cbody = document.querySelector('.carrinho-body')
+			carrinhoFooter.appendChild(carrinhoQuant)
+			cbody.appendChild(carrinhoFooter)
+		})
+	}
 
-            const pTotal = document.createElement('p');
-            pTotal.innerHTML = `Valor Total R$ ${total}`
-            carrinhoQuant.appendChild(pTotal);
+	static removerProduto(id) {
+	
+	}
 
-            const cbody = document.querySelector('.carrinho-body')
-            carrinhoFooter.appendChild(carrinhoQuant);
-            cbody.appendChild(carrinhoFooter);
-    })
-    }
+	static reset() {
+		const cbody = document.querySelector('.carrinho-body')
+		while (cbody.lastElementChild) {
+			cbody.lastElementChild.remove()
+		}
+	}
+	static createProd() {
+		this.reset()
+		arrProduto.forEach((produto) => {
+			const cbody = document.querySelector('.carrinho-body')
+			// cbody.innerHTML = '';
 
-    static removerProduto() {
+			const carrinhoCard = document.createElement('div')
+			carrinhoCard.classList.add('carrinho-card')
 
-    }
+			const prodImg = document.createElement('img')
+			prodImg.src = produto.imagem
+			carrinhoCard.appendChild(prodImg)
 
+			const carrinhoCardText = document.createElement('div')
+			const h2 = document.createElement('h2')
+			h2.innerHTML = produto.nome
+			carrinhoCardText.appendChild(h2)
 
+			const p = document.createElement('p')
+			p.innerHTML = produto.categoria
+			carrinhoCardText.appendChild(p)
+
+			const h3 = document.createElement('h3')
+			h3.innerHTML = `R$ ${produto.preco.toFixed(2)}`
+			carrinhoCardText.appendChild(h3)
+
+			const lixo = document.createElement('button')
+			lixo.setAttribute(
+				'lixoid',
+				arrProduto.findIndex((el) => el === produto)
+			)
+			lixo.innerHTML = '🗑️'
+			carrinhoCard.appendChild(lixo)
+
+			carrinhoCard.appendChild(carrinhoCardText)
+
+			cbody.appendChild(carrinhoCard)
+		})
+	}
 }
 
-
-export {Carrinho}
+export { Carrinho }
