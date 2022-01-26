@@ -1,0 +1,209 @@
+:root {
+    --vermelho-primario:#FF2253;
+    --rosinha-primario:#FFE9EE;
+    --verde-secundario:#4ACA94;
+    --verdinho-secundario:#E4F7EF;
+    --azulzinho-produto:#EEF6FF;
+    --amarelo-produto:#FFF7F4;
+    --rosinha-produto:#FFE4EA;
+    --cinza-produto:#F3EEF5;
+    --cinza4:#212529;
+    --cinza3:#868E96;
+    --cinza2:#E9ECEF;
+    --cinza1:#F8F9FA;
+    --fonte:'Poppins';
+
+}
+body {
+    font-family: var(--fonte);
+}
+
+header {
+    border: 1px solid yellow;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 17px;
+    
+}
+header img {
+    width: 123px;
+    margin-bottom: 15px;
+
+}
+.barraDePesquisa{
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: row;
+    width:341px;
+    background-color: var(--cinza1);
+    border-radius: 33px;
+    align-items: center;
+}
+.barraDePesquisa input {
+    height: 54px;
+    width: 343px;
+    background-color: var(--cinza1);   
+}
+.barraDePesquisa button {
+    width: 44px;
+    height: 44px;
+    border-radius: 33px;
+}
+.barraDePesquisa input::placeholder{
+    color: var(--cinza3);
+}
+main {
+    border: 1px solid blueviolet;
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 16px;
+    width: 96vw;
+}
+.menu-filtros {
+    border: 1 px solid blue;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+.botao-filtro {
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-radius:30px;
+    margin-right: 22px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.botao-filtro img {
+    width: 10px;
+    height: 10px;
+}
+.botao-filtro::selection{
+ border:1px solid black;
+}
+#filtro-todos {
+    width: 72px;
+    background-color: var(--cinza1);
+}
+#filtro-panificadora {
+    width: 148px;
+    background-color: var(--amarelo-produto);
+    
+}
+#filtro-frutas {
+    width: 104px;
+    background-color:var(--rosinha-produto);
+}
+#filtro-bebidas {
+    width: 118px;
+    background-color: var(--cinza2);
+}
+.espacoCards {
+    border: 1px solid salmon;
+    display: flex;
+    flex-direction: row;
+    margin-top: 27px;
+    overflow: auto;
+    width: 341px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid brown;
+    width: 302px;
+    padding: 1px;
+}
+.card img {
+    border: 1px solid aqua;
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+}
+.card-text {
+    margin-top:15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid magenta;
+    width: 300px;
+}
+.card-text p {
+    border: 1px solid sienna;
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--cinza3);
+    height: 48px;
+}
+.card-text-buy {
+    border: 1px solid aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    padding-top: 16px;
+}
+.carrinho {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 341px;
+    padding-top: 27px;
+}
+.carrinho-header {
+    border: 1px solid darkblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--vermelho-primario);
+    color: white;
+    width: 340px;
+    height: 59px;
+    padding: 20px;
+    margin-bottom: 6px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.carrinho-header h2 {
+    margin-left: 20px;
+}
+.carrinho-body {
+    border: 1px solid hotpink;
+    background-color: var(--cinza1);
+    width: 340px;
+    height: 432px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 18px;
+}
+.carrinho-card {
+    display: flex;
+    flex-direction: row;
+}
+.carrinho-card img {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+}
+.carrinho-card-text {
+    width: 189px;
+}
+.carrinho-card-text h2 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+.carrinho-card-text p {
+    color: var(--cinza3);
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 400;
+}
+@media (min-width:800px) {
+    
+}
