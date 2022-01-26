@@ -13,7 +13,7 @@ class Produtos {
 		let final = await produtos
 		db = final
 		Produtos.construirCard(db)
-		console.log(db)
+	
 	}
 
 	static construirCard(arr) {
@@ -47,7 +47,7 @@ class Produtos {
 
 			card.appendChild(cardText)
 
-			console.log(card)
+			
 
 			espacoCards.appendChild(card)
 		}
