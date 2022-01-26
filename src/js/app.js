@@ -6,6 +6,7 @@ const todos = document.querySelector('#filtro-todos')
 const panificadora = document.querySelector('#filtro-panificadora')
 const frutas = document.querySelector('#filtro-frutas')
 const bebidas = document.querySelector('#filtro-bebidas')
+const cbody = document.querySelector('.carrinho-body')
 
 Produtos.criarPaginaInicial()
 
@@ -34,5 +35,13 @@ spacoCards.addEventListener('click' , (e) => {
     if(tar.tagName === 'BUTTON') {
         let id = Number(tar.getAttribute('prodid'))
         Carrinho.addProduto(id)
+    }
+})
+
+cbody.addEventListener('click' , (e) =>{
+    let tar = e.target
+    if(tar.tagName === 'BUTTON') {
+        let id = Number(tar.getAttribute('lixoid'))
+        Carrinho.removerProduto(id)
     }
 })
