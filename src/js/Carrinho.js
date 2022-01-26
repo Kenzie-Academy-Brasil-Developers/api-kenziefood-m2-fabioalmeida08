@@ -34,14 +34,18 @@ class Carrinho {
         const lixo = document.createElement('button')
         lixo.setAttribute('lixoid', produto.id)
         lixo.innerHTML = '🗑️'
-        carrinhoCardText.appendChild(lixo)
+        carrinhoCard.appendChild(lixo)
 
         carrinhoCard.appendChild(carrinhoCardText) 
         const cbody = document.querySelector('.carrinho-body')
         cbody.appendChild(carrinhoCard)
     }
 
-    static CalculoPreco() {
+    static calculoPreco() {
+
+    }
+
+    static removerProduto() {
 
     }
 
