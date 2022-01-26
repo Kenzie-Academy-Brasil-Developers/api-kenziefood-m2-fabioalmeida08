@@ -41,7 +41,11 @@ class Carrinho {
         cbody.appendChild(carrinhoCard)
     }
 
-    static CalculoPreco() {
+    static calculoPreco() {
+
+    }
+
+    static removerProduto() {
 
     }
 
