@@ -13,7 +13,9 @@
 
 <body>
     <header>
-        <img src="#" alt="logo">
+
+        <img src="./style/img/Captura de tela de 2022-01-26 12-31-08.png" alt="logo">
+
         <div class="barraDePesquisa">
             <input id="input-pesquisa" type="text" placeholder="Pesquisar por produto">
             <button>
@@ -22,23 +24,25 @@
         </div>
     </header>
     <main class="visaoGeral">
+
+        <nav class="menu-filtros">
+            <button href="#" class="botao-filtro" id="filtro-todos">
+                Todos
+            </button>
+            <button href="#" class="botao-filtro" id="filtro-panificadora">
+                🍞 Panificadora
+            </button>
+            <button href="#" class="botao-filtro" id="filtro-frutas">
+                🍊 Frutas
+            </button>
+            <button href="#" class="botao-filtro" id="filtro-bebidas">
+                🍷 Bebidas
+            </button>
+        </nav>
         <div>
-            <nav class="menu-filtros">
-                <button href="#" class="botao-filtro" id="filtro-todos">
-                    Todos
-                </button>
-                <button href="#" class="botao-filtro" id="filtro-panificadora">
-                    🍞 Panificadora
-                </button>
-                <button href="#" class="botao-filtro" id="filtro-frutas">
-                    🍊 Frutas
-                </button>
-                <button href="#" class="botao-filtro" id="filtro-bebidas">
-                    🍷 Bebidas
-                </button>
-            </nav>
             <div class="espacoCards">
-                <div class="card">
+                <!-- <div class="card">
+
                     <img src="#" alt="imagem produto">
                     <a href="#">
                         <img src="#" alt="imagem categoria">
@@ -54,17 +58,18 @@
                             </button>
                         </div>
                     </div>
-                </div>
+
+                </div> -->
             </div>
-        </div>
-        <div>
+
             <div class="carrinho">
                 <div class="carrinho-header">
                     <h2> Carrinho</h2>
                 </div>
                 <div class="carrinho-body">
 
-                    <!-- <div class="carrinho-empty">
+                     <div class="carrinho-empty">
+
                         <img src="#" alt="caixa sorrindo">
                         <h3>Ops!</h3>
                         <p>Por enquanto não temos produtos no carrinho</p>
@@ -82,7 +87,8 @@
                         </a>
                     </div> -->
 
-                <!-- <div class="carrinho-footer">
+                    <!-- <div class="carrinho-footer">
+
                         <div class="carrinho-footer-quantidade">
                             <p>Quantidade</p>
                             <p>quantidade de produtos</p>

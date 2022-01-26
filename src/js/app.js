@@ -6,7 +6,9 @@ const todos = document.querySelector('#filtro-todos')
 const panificadora = document.querySelector('#filtro-panificadora')
 const frutas = document.querySelector('#filtro-frutas')
 const bebidas = document.querySelector('#filtro-bebidas')
+
 const cbody = document.querySelector('.carrinho-body')
+
 
 Produtos.criarPaginaInicial()
 

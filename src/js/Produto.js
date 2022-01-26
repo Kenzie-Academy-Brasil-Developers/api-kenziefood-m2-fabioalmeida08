@@ -2,7 +2,6 @@ const espacoCards = document.querySelector('.espacoCards')
 let db = []
 class Produtos {
 
-
 	static produtos = []
 
 	static async criarPaginaInicial() {
