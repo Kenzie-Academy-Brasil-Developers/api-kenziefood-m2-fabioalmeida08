@@ -99,6 +99,9 @@ main div {
     text-align: center;
     cursor: pointer;
 }
+.botao-filtro:hover{
+    border: 2px solid black;
+}
 .botao-filtro img {
 	  width: 10px;
 	  height: 10px;
@@ -344,6 +347,7 @@ button {
     }
 
 
+}
 
 
 
@@ -681,8 +685,7 @@ button {
 
 
 
-
-.carrinho-footer {
+/* .carrinho-footer {
 	display: flex;
 	flex-flow: column;
 }
@@ -704,4 +707,4 @@ button {
 
 button {
     cursor: pointer;
-}
+} */
