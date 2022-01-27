@@ -41,9 +41,13 @@ search.addEventListener('click', () => {
 
 spacoCards.addEventListener('click' , (e) => {
     let tar = e.target
-    if(tar.tagName === 'BUTTON') {
+    if(tar.className === 'shop') {
         let id = Number(tar.getAttribute('prodid'))
         Carrinho.addProduto(id)
+    }
+    if(tar.className === 'card-button') {
+        let cat = String(tar.innerText).split(' ')
+        Produtos.filtroCat(cat[1])
     }
 })
 
