@@ -49,6 +49,7 @@ class Produtos {
 			h3.innerHTML = `R$ ${preco.toFixed(2)}`
 
 			let btnCarrinhoVerde = document.createElement('button')
+			btnCarrinhoVerde.classList.add('shop')
 			btnCarrinhoVerde.innerHTML = ''
 			btnCarrinhoVerde.setAttribute('prodid', id)
 			
