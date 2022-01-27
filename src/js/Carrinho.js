@@ -98,6 +98,7 @@ class Carrinho {
 			}
 		}
 	}
+	
 	static createProd() {
 		this.reset()
 		arrProduto.forEach((produto) => {
@@ -125,11 +126,17 @@ class Carrinho {
 			carrinhoCardText.appendChild(h3)
 
 			const lixo = document.createElement('button')
+			const trash = document.createElement('img')
+			trash.src = './src/img/trash.png'
 			lixo.setAttribute(
 				'lixoid',
 				arrProduto.findIndex((el) => el === produto)
 			)
-			lixo.innerHTML = '🗑️'
+			trash.setAttribute(
+				'lixoid',
+				arrProduto.findIndex((el) => el === produto)
+			)
+			lixo.appendChild(trash)
 			carrinhoCard.appendChild(lixo)
 
 			carrinhoCard.appendChild(carrinhoCardText)

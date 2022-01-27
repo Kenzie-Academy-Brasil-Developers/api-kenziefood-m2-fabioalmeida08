@@ -48,6 +48,10 @@ header img {
 #lupa{
     width: 40px;
 }
+#logo{
+    cursor: pointer;
+}
+
 .card img:hover{
     border-color: #FF2253;
 }
@@ -262,6 +266,7 @@ main div {
 #input-pesquisa {
     border-radius: 33px;
     border: none;
+    box-sizing: border-box;
 }
 .carrinho-card {
     display: flex;
@@ -328,6 +333,17 @@ main div {
 
 button {
     cursor: pointer;
+    box-sizing: border-box;
+}
+
+.carrinho-card button img{
+    width: 15px;
+    height: 15px;
+}
+
+.carrinho-card button:hover {
+    border: none;
+
 }
 
 @media (min-width:800px) {
@@ -340,6 +356,7 @@ button {
     }
     .barraDePesquisa {
         margin-right: 40px;
+        box-sizing:border-box;
     }
     .espacoCards {
         flex-wrap: wrap;
