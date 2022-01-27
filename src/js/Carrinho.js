@@ -1,5 +1,5 @@
 import { Produtos, db } from './Produto.js'
-const arrProduto = []
+let arrProduto = []
 
 class Carrinho {
 	static async addProduto(id) {
@@ -13,6 +13,7 @@ class Carrinho {
 		const produto = final.find((item) => item.id === id)
 
 		arrProduto.push(produto)
+		this.localStorage()
 		this.createProd()
 		this.calculoPreco(arrProduto)
 		
@@ -20,6 +21,22 @@ class Carrinho {
 		const produto = db.find((item) => item.id === id)
 
 		arrProduto.push(produto)
+		this.localStorage()
+		this.createProd()
+		this.calculoPreco(arrProduto)
+		}
+	}
+
+	static localStorage() {
+		localStorage.setItem('prod' , JSON.stringify(arrProduto))
+	}
+	
+	
+	static getStorage(){
+		let produtos = JSON.parse(localStorage.getItem('prod'))
+		console.log(produtos)
+		if(produtos.length !== 0){
+		arrProduto = produtos
 		this.createProd()
 		this.calculoPreco(arrProduto)
 		}
@@ -66,6 +83,7 @@ class Carrinho {
 
 	static removerProduto(id) {
 		arrProduto.splice(id, 1)
+		this.localStorage()
 		Carrinho.createProd()
 		this.calculoPreco(arrProduto)
 
