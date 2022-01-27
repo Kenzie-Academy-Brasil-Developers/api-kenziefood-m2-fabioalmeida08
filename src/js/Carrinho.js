@@ -61,7 +61,27 @@ class Carrinho {
 		arrProduto.splice(id, 1)
 		Carrinho.createProd()
 		this.calculoPreco(arrProduto)
+		
+		if(arrProduto.length === 0) {
+			this.createEmptycar()
+		}
+	}
 
+	static createEmptycar() {
+		const cbody = document.querySelector('.carrinho-body')
+		const cEmpty = document.createElement('div')
+		cEmpty.classList.add('carrinho-empty')
+		const img = document.createElement('img')
+		img.src = './src/img/bag.png'
+		const h3 = document.createElement('h3')
+		h3.innerHTML = 'Ops!'
+		const p = document.createElement('p')
+		p.innerHTML = 'Por enquanto não temos produtos no carrinho'
+
+		cEmpty.appendChild(img)
+		cEmpty.appendChild(h3)
+		cEmpty.appendChild(p)
+		cbody.appendChild(cEmpty)
 	}
 
 	static reset() {
