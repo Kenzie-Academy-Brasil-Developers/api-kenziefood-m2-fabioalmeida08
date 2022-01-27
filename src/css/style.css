@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,600&display=swap');
 
 :root {
     --vermelho-primario:#FF2253;
@@ -227,6 +227,8 @@ main div {
     flex-direction: column;
     width: 92vw;
     padding-top: 27px;
+    align-items: center;
+    
 }
 .carrinho-header {
     /* border: 1px solid darkblue; */
@@ -324,7 +326,7 @@ main div {
 	flex-flow: row;
 	padding-left: 18px;
 	padding-right: 18px;
-    max-width: 340px;
+    width: 340px;
 }
 
 .carrinho-footer :nth-child(odd) {
@@ -372,8 +374,9 @@ button {
         margin-bottom: 75px;
     }
     .carrinho {
-        width:340px;
+        width:400px;
         justify-content: flex-start;
+        padding-right: 50px;
     }
     .carrinho-body {
         height: 50vh;
