@@ -5,6 +5,7 @@ class Produtos {
 	static produtos = []
 
 	static async criarPaginaInicial() {
+		
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
 		)
@@ -16,39 +17,40 @@ class Produtos {
 	}
 
 	static construirCard(arr) {
-		for (let i of arr) {
+		
+		for (let produto of arr) {
+			const {imagem , categoria , nome , descricao , preco , id} = produto
+			
 			let card = document.createElement('div')
 			card.classList.add('card')
 			
 			let imgProd = document.createElement('img')
-			imgProd.src = i.imagem
+			imgProd.src = imagem
 			card.appendChild(imgProd)
 
 			const button = document.createElement('button')
 			button.classList.add('card-button')
 
-			if(i.categoria === 'Panificadora') button.innerText = '🍞 Panificadora'
-			if(i.categoria === 'Frutas') button.innerText = '🍊 Frutas'
-			if(i.categoria === 'Bebidas') button.innerText = '🍷 Bebidas'
+			if(categoria === 'Panificadora') button.innerText = '🍞 Panificadora'
+			if(categoria === 'Frutas') button.innerText = '🍊 Frutas'
+			if(categoria === 'Bebidas') button.innerText = '🍷 Bebidas'
 
 
 			card.appendChild(button)
 
-
-
 			let cardText = document.createElement('div')
 			let h2 = document.createElement('h2')
-			h2.innerHTML = i.nome
+			h2.innerHTML = nome
 			let p = document.createElement('p')
-			p.innerHTML = i.descricao
+			p.innerHTML = descricao
 
 			let cardTextBuy = document.createElement('div')
 			let h3 = document.createElement('h3')
-			h3.innerHTML = `R$ ${i.preco.toFixed(2)}`
+			h3.innerHTML = `R$ ${preco.toFixed(2)}`
 
 			let btnCarrinhoVerde = document.createElement('button')
 			btnCarrinhoVerde.innerHTML = ''
-			btnCarrinhoVerde.setAttribute('prodid', i.id)
+			btnCarrinhoVerde.setAttribute('prodid', id)
 			
 			cardTextBuy.appendChild(h3)
 			cardTextBuy.appendChild(btnCarrinhoVerde)
@@ -66,8 +68,10 @@ class Produtos {
 	}
 
 	static async filtroCat(cat) {
+		
 		this.reset()
 		let nome = String(cat)
+		
 		if (db.length === 0) {
 			let prod = await fetch(
 				'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
@@ -83,8 +87,11 @@ class Produtos {
 	}
 
 	static async Busca(busca) {
+		
 		this.reset()
+		
 		let nome = new RegExp(busca, 'gi')
+		
 		if (db.length === 0) {
 			let prod = await fetch(
 				'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
