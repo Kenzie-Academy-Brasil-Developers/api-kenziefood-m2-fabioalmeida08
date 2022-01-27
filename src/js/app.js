@@ -42,7 +42,7 @@ spacoCards.addEventListener('click' , (e) => {
 
 cbody.addEventListener('click' , (e) =>{
     let tar = e.target
-    if(tar.tagName === 'BUTTON') {
+    if(tar.tagName === 'BUTTON' ||tar.tagName === 'IMG') {
         let id = Number(tar.getAttribute('lixoid'))
         Carrinho.removerProduto(id)
     }
