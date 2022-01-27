@@ -12,6 +12,7 @@ class Produtos {
 		let produtos = await prod.json()
 		let final = await produtos
 		db = final
+		Produtos.reset()
 		Produtos.construirCard(db)
 	
 	}
