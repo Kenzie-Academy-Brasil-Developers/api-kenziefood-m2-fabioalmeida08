@@ -6,7 +6,7 @@ const todos = document.querySelector('#filtro-todos')
 const panificadora = document.querySelector('#filtro-panificadora')
 const frutas = document.querySelector('#filtro-frutas')
 const bebidas = document.querySelector('#filtro-bebidas')
-
+const logo = document.querySelector('#logo')
 const cbody = document.querySelector('.carrinho-body')
 
 
@@ -46,4 +46,9 @@ cbody.addEventListener('click' , (e) =>{
         let id = Number(tar.getAttribute('lixoid'))
         Carrinho.removerProduto(id)
     }
+})
+
+logo.addEventListener('click' , () =>{
+    Produtos.reset() 
+    Produtos.criarPaginaInicial()
 })

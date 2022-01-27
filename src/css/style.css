@@ -48,6 +48,10 @@ header img {
 #lupa{
     width: 40px;
 }
+#logo{
+    cursor: pointer;
+}
+
 .card img:hover{
     border-color: #FF2253;
 }

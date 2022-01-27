@@ -98,6 +98,7 @@ class Carrinho {
 			}
 		}
 	}
+	
 	static createProd() {
 		this.reset()
 		arrProduto.forEach((produto) => {
