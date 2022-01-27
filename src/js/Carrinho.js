@@ -3,17 +3,26 @@ const arrProduto = []
 
 class Carrinho {
 	static async addProduto(id) {
+		if(db.length === 0) {
 		let prod = await fetch(
 			'https://shrouded-mountain-15003.herokuapp.com/https://kenzie-food-api.herokuapp.com/product'
 		)
 		let produtos = await prod.json()
 		let final = await produtos
-
+		db = final
 		const produto = final.find((item) => item.id === id)
 
 		arrProduto.push(produto)
 		this.createProd()
 		this.calculoPreco(arrProduto)
+		
+	}else{
+		const produto = db.find((item) => item.id === id)
+
+		arrProduto.push(produto)
+		this.createProd()
+		this.calculoPreco(arrProduto)
+		}
 	}
 
 	static calculoPreco(produtos) {
@@ -31,6 +40,7 @@ class Carrinho {
 			const span = document.createElement('span')
 			span.innerHTML = `${produtos.length}`
 			p.innerHTML = `Quantidade de Produtos`
+			
 			carrinhoQuant.appendChild(p)
 			carrinhoQuant.appendChild(span)
 
