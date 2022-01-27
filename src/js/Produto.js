@@ -19,16 +19,9 @@ class Produtos {
 		for (let i of arr) {
 			let card = document.createElement('div')
 			card.classList.add('card')
-
 			let imgProd = document.createElement('img')
 			imgProd.src = i.imagem
 			card.appendChild(imgProd)
-
-			let categoryButton = document.createElement('button')
-			categoryButton.classList.add('card-button')
-			categoryButton.innerText = i.categoria
-			card.appendChild(categoryButton)
-			
 
 			let cardText = document.createElement('div')
 			let h2 = document.createElement('h2')
