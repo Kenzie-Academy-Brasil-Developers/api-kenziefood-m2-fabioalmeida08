@@ -48,6 +48,9 @@ header img {
 #lupa{
     width: 40px;
 }
+.card img:hover{
+    border-color: #FF2253;
+}
 .barraDePesquisa button {
     width: 52px;
     height: 44px;
