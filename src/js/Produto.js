@@ -19,9 +19,22 @@ class Produtos {
 		for (let i of arr) {
 			let card = document.createElement('div')
 			card.classList.add('card')
+			
 			let imgProd = document.createElement('img')
 			imgProd.src = i.imagem
 			card.appendChild(imgProd)
+
+			const button = document.createElement('button')
+			button.classList.add('card-button')
+
+			if(i.categoria === 'Panificadora') button.innerText = '🍞 Panificadora'
+			if(i.categoria === 'Frutas') button.innerText = '🍊 Frutas'
+			if(i.categoria === 'Bebidas') button.innerText = '🍷 Bebidas'
+
+
+			card.appendChild(button)
+
+
 
 			let cardText = document.createElement('div')
 			let h2 = document.createElement('h2')
