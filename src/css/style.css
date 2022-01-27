@@ -141,6 +141,7 @@ main div {
     width: 302px;
     padding: 1px;
     margin-right: 25px;
+    justify-content: flex-start;
 }
 .card img {
     border: 4px solid var(--rosinha-produto);
