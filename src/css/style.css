@@ -1,330 +1,327 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,600&display=swap');
 
 :root {
-    --vermelho-primario:#FF2253;
-    --rosinha-primario:#FFE9EE;
-    --verde-secundario:#4ACA94;
-    --verdinho-secundario:#E4F7EF;
-    --azulzinho-produto:#EEF6FF;
-    --amarelo-produto:#FFF7F4;
-    --rosinha-produto:#FFE4EA;
-    --cinza-produto:#F3EEF5;
-    --cinza4:#212529;
-    --cinza3:#868E96;
-    --cinza2:#E9ECEF;
-    --cinza1:#F8F9FA;
-    --fonte:'Poppins';
+	--vermelho-primario: #ff2253;
+	--rosinha-primario: #ffe9ee;
+	--verde-secundario: #4aca94;
+	--verdinho-secundario: #e4f7ef;
+	--azulzinho-produto: #eef6ff;
+	--amarelo-produto: #fff7f4;
+	--rosinha-produto: #ffe4ea;
+	--cinza-produto: #f3eef5;
+	--cinza4: #212529;
+	--cinza3: #868e96;
+	--cinza2: #e9ecef;
+	--cinza1: #f8f9fa;
+	--fonte: 'Poppins';
 }
 body {
 	font-family: var(--fonte);
 }
 header {
-    /* border: 1px solid yellow; */
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    width: 91.5vw;
-    padding: 17px;
+	/* border: 1px solid yellow; */
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	width: 91.5vw;
+	padding: 17px;
 }
 header img {
 	width: 123px;
 	margin-bottom: 15px;
 }
-.barraDePesquisa{
-    /* border: 1px solid orange; */
-    display: flex;
-    flex-direction: row;
-    width:341px;
-    border-radius: 33px;
-    align-items: center;
-    background-color: var(--cinza1);
+.barraDePesquisa {
+	/* border: 1px solid orange; */
+	display: flex;
+	flex-direction: row;
+	width: 341px;
+	border-radius: 33px;
+	align-items: center;
+	background-color: var(--cinza1);
 }
 .barraDePesquisa input {
-    height: 54px;
-    width: 343px;
-    background-color: var(--cinza1); 
-    padding-left: 16px;  
+	height: 54px;
+	width: 343px;
+	background-color: var(--cinza1);
+	padding-left: 16px;
 }
-#lupa{
-    width: 40px;
+#lupa {
+	width: 40px;
 }
-#logo{
-    cursor: pointer;
+#logo {
+	cursor: pointer;
 }
 
-.card img:hover{
-    border-color: #FF2253;
+.card img:hover {
+	border-color: #ff2253;
 }
 .barraDePesquisa button {
-    width: 52px;
-    height: 44px;
-    margin-right: 6px;
-    border-radius: 50px;
-    background-color: #FFE9EE;
-    border: none;
+	width: 52px;
+	height: 44px;
+	margin-right: 6px;
+	border-radius: 50px;
+	background-color: #ffe9ee;
+	border: none;
 }
 .barraDePesquisa button:hover {
-    background-color: var(--vermelho-primario);
-    color: white;
+	background-color: var(--vermelho-primario);
+	color: white;
 }
 .barraDePesquisa input::placeholder {
 	color: var(--cinza3);
 }
 .barraDePesquisa input:focus {
-    outline: none;
+	outline: none;
 }
 .barraDePesquisa:focus-within {
-    border: 2px solid black;
+	border: 2px solid black;
 }
 main {
+	/* border: 1px solid blueviolet; */
 
-    /* border: 1px solid blueviolet; */
-
-    display: flex;
-    flex-direction: column;
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-top: 16px;
-    width: 89vw;
+	display: flex;
+	flex-direction: column;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 16px;
+	width: 89vw;
 }
 main div {
-    /* border: 1px dashed greenyellow; */
-    display: flex;
-    flex-direction: column;
+	/* border: 1px dashed greenyellow; */
+	display: flex;
+	flex-direction: column;
 }
 .menu-filtros {
-    /* border: 1 px solid blue; */
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
+	/* border: 1 px solid blue; */
+	display: flex;
+	flex-direction: row;
+	overflow: auto;
 }
 .botao-filtro {
-    border:hidden;
-    align-items: center;
-    height: 40px;
-    border-radius:30px;
-    margin-right: 22px;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
+	border: hidden;
+	align-items: center;
+	height: 40px;
+	border-radius: 30px;
+	margin-right: 22px;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	cursor: pointer;
 }
-.botao-filtro:hover{
-    border: 2px solid black;
+.botao-filtro:hover {
+	border: 2px solid black;
 }
 .botao-filtro img {
-	  width: 10px;
-	  height: 10px;
+	width: 10px;
+	height: 10px;
 }
-.botao-filtro:focus{
-    border:2px solid black; 
+.botao-filtro:focus {
+	border: 2px solid black;
 }
-.carrinho-empty{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    color: #868E96;
+.carrinho-empty {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	color: #868e96;
 }
-.carrinho-empty img{
-    width: 80px;
-    margin-bottom: 20px;
-    margin-top: 120px;
+.carrinho-empty img {
+	width: 80px;
+	margin-bottom: 20px;
+	margin-top: 120px;
 }
-.carrinho-empty p{
-    width: 200px;
-
+.carrinho-empty p {
+	width: 200px;
 }
-.carrinho-empty h3{
-    font-weight: 700;
-    margin-bottom: 20px;
+.carrinho-empty h3 {
+	font-weight: 700;
+	margin-bottom: 20px;
 }
 #filtro-todos {
-    min-width: 72px;
-    background-color: var(--cinza1);
+	min-width: 72px;
+	background-color: var(--cinza1);
 }
 #filtro-panificadora {
-    min-width: 148px;
-    background-color: var(--amarelo-produto);
-    
+	min-width: 148px;
+	background-color: var(--amarelo-produto);
 }
 #filtro-frutas {
-    min-width: 104px;
-    background-color:var(--rosinha-produto);
+	min-width: 104px;
+	background-color: var(--rosinha-produto);
 }
 #filtro-bebidas {
-    min-width: 118px;
-    background-color: var(--cinza2);
+	min-width: 118px;
+	background-color: var(--cinza2);
 }
 .espacoCards {
-    /* border: 1px solid salmon; */
-    display: flex;
-    flex-direction: row;
-    margin-top: 27px;
-    overflow: auto;
-    width: 91vw;
+	/* border: 1px solid salmon; */
+	display: flex;
+	flex-direction: row;
+	margin-top: 27px;
+	overflow: auto;
+	width: 91vw;
 }
 .card {
-    /* border: 1px solid brown; */
-    display: flex;
-    flex-direction: column;
-    width: 302px;
-    padding: 1px;
-    margin-right: 25px;
-    justify-content: flex-start;
+	/* border: 1px solid brown; */
+	display: flex;
+	flex-direction: column;
+	width: 302px;
+	padding: 1px;
+	margin-right: 25px;
+	justify-content: flex-start;
 }
 .card img {
-    border: 4px solid var(--rosinha-produto);
-    width: 300px;
-    height: 200px;
-    border-radius: 8px;
+	border: 4px solid var(--rosinha-produto);
+	width: 300px;
+	height: 200px;
+	border-radius: 8px;
 }
 .card-button {
-    border: hidden;
-    height: 30px;
-    background-color: var(--rosinha-produto);
-    border-radius: 30px;
-    position: relative;
-    bottom: 15px;
-    left: 16px;
-    align-self: flex-start;
-    padding: 0px 24px;
-
+	border: hidden;
+	height: 30px;
+	background-color: var(--rosinha-produto);
+	border-radius: 30px;
+	position: relative;
+	bottom: 15px;
+	left: 16px;
+	align-self: flex-start;
+	padding: 0px 24px;
 }
 .card div {
-    /* border: 1px solid magenta; */
-    margin-top:6px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+	/* border: 1px solid magenta; */
+	margin-top: 6px;
+	display: flex;
+	flex-direction: column;
+	width: 300px;
 }
 .card div p {
-    /* border: 1px solid sienna; */
-    margin-top: 16px;
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--cinza3);
-    height: 48px;
+	/* border: 1px solid sienna; */
+	margin-top: 16px;
+	font-size: 12px;
+	line-height: 16px;
+	color: var(--cinza3);
+	height: 48px;
 }
 .card div div {
-    /* border: 1px solid aquamarine; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    padding: 6px;
+	/* border: 1px solid aquamarine; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 300px;
+	padding: 6px;
 }
 .card div div h3 {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 13px;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 13px;
 }
 .card div div button {
-    border:hidden;
-    width: 35px;
-    height: 35px;
-    border-radius: 33px;
-    background-color: var(--verdinho-secundario);
+	border: hidden;
+	width: 35px;
+	height: 35px;
+	border-radius: 33px;
+	background-color: var(--verdinho-secundario);
 }
 .card div div button:hover {
-    background-color: var(--verde-secundario);
-    color: white;
+	background-color: var(--verde-secundario);
+	color: white;
 }
 .carrinho {
-    /* border: 1px solid green; */
-    display: flex;
-    flex-direction: column;
-    width: 92vw;
-    padding-top: 27px;
-    align-items: center;
-    
+	/* border: 1px solid green; */
+	display: flex;
+	flex-direction: column;
+	width: 92vw;
+	padding-top: 27px;
+	align-items: center;
 }
 .carrinho-header {
-    /* border: 1px solid darkblue; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: var(--vermelho-primario);
-    color: white;
-    width: 340px;
-    height: 59px;
-    padding: 20px;
-    margin-bottom: 6px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-
+	/* border: 1px solid darkblue; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: var(--vermelho-primario);
+	color: white;
+	width: 340px;
+	height: 59px;
+	padding: 20px;
+	margin-bottom: 6px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 .carrinho-header h2 {
 	margin-left: 20px;
 }
 .carrinho-body {
-    background-color: var(--cinza1);
-    width: 340px;
-    height: 432px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 18px;
-    overflow-y: auto;
-    margin-bottom: 1px;
-
-  }
+	background-color: var(--cinza1);
+	width: 340px;
+	height: 432px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 18px;
+	overflow-y: auto;
+	margin-bottom: 1px;
+}
 
 #input-pesquisa {
-    border-radius: 33px;
-    border: none;
-    box-sizing: border-box;
+	border-radius: 33px;
+	border: none;
+	box-sizing: border-box;
 }
 .carrinho-card {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 45px;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 45px;
+	justify-content: space-between;
 }
 .carrinho-card img {
-    width: 75px;
-    height: 75px;
-    border-radius: 8px;
+	width: 75px;
+	height: 75px;
+	border-radius: 8px;
 }
 .carrinho-card div {
-    width: 189px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 6px;
+	width: 189px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 6px;
 }
-.carrinho-card div h2 {    
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20px;
-    text-align: left;
+.carrinho-card div h2 {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 20px;
+	text-align: left;
+	white-space: nowrap;
+	width: 160px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-.carrinho-card div h3{
-    font-size: 12px;
-    font-weight: normal;
+.carrinho-card div h3 {
+	font-size: 12px;
+	font-weight: normal;
 }
 .carrinho-card div p {
-    color: var(--cinza3);
-    font-size: 10px;
-    line-height: 16px;
-    font-weight: normal;
+	color: var(--cinza3);
+	font-size: 10px;
+	line-height: 16px;
+	font-weight: normal;
 }
 .carrinho-card button {
-    order: 3;
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    padding: 3px;
-    background-color: var(--cinza2);
-    align-self: center;
-    border: none;
+	order: 3;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	padding: 3px;
+	background-color: var(--cinza2);
+	align-self: center;
+	border: none;
 }
 .carrinho-card button:hover {
-    border: 1px solid black;
+	border: 1px solid black;
 }
 
 .carrinho-footer {
@@ -341,7 +338,7 @@ main div {
 	flex-flow: row;
 	padding-left: 18px;
 	padding-right: 18px;
-    width: 340px;
+	width: 340px;
 }
 
 .carrinho-footer :nth-child(odd) {
@@ -349,393 +346,53 @@ main div {
 }
 
 button {
-    cursor: pointer;
-    box-sizing: border-box;
+	cursor: pointer;
+	box-sizing: border-box;
 }
 
-.carrinho-card button img{
-    width: 15px;
-    height: 15px;
+.carrinho-card button img {
+	width: 15px;
+	height: 15px;
 }
 
 .carrinho-card button:hover {
-    border: none;
-
+	border: none;
 }
 
-@media (min-width:800px) {
-    body {
-        padding-left: 115px;
-    }
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .barraDePesquisa {
-        margin-right: 40px;
-        box-sizing:border-box;
-    }
-    .espacoCards {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    main div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .card {
-        margin-right: 45px;
-        margin-bottom: 75px;
-    }
-    .carrinho {
-        width:400px;
-        justify-content: flex-start;
-        padding-right: 50px;
-    }
-    .carrinho-body {
-        height: 50vh;
-
-    }
-
-
+@media (min-width: 800px) {
+	body {
+		padding-left: 115px;
+	}
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.barraDePesquisa {
+		margin-right: 40px;
+		box-sizing: border-box;
+	}
+	.espacoCards {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	main div {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.card {
+		margin-right: 45px;
+		margin-bottom: 75px;
+	}
+	.carrinho {
+		width: 400px;
+		justify-content: flex-start;
+		padding-right: 50px;
+	}
+	.carrinho-body {
+		height: 50vh;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* .carrinho-footer {
 	display: flex;
