@@ -12,7 +12,7 @@ class Carrinho {
 		const produto = final.find((item) => item.id === id)
 
 		arrProduto.push(produto)
-        this.createProd()
+		this.createProd()
 		this.calculoPreco(arrProduto)
 	}
 
@@ -58,7 +58,10 @@ class Carrinho {
 	}
 
 	static removerProduto(id) {
-	
+		arrProduto.splice(id, 1)
+		Carrinho.createProd()
+		this.calculoPreco(arrProduto)
+
 	}
 
 	static reset() {
