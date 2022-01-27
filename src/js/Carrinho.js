@@ -43,7 +43,7 @@ class Carrinho {
 			preco.innerHTML = `R$ ${arrProduto.reduce(
 				(a, b) => a + b.preco,
 				0
-			)}`
+			).toFixed(2)}`
 			
 			carrinhoTotal.appendChild(pTotal)
 			carrinhoTotal.appendChild(preco)
