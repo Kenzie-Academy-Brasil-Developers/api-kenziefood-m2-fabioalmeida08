@@ -129,6 +129,9 @@ main div {
     margin-bottom: 20px;
     margin-top: 120px;
 }
+.carrinho-empty p{
+    width: 200px;
+}
 #filtro-todos {
     min-width: 72px;
     background-color: var(--cinza1);
