@@ -274,6 +274,7 @@ main div {
     display: flex;
     flex-direction: row;
     margin-bottom: 45px;
+    justify-content: space-between;
 }
 .carrinho-card img {
     width: 75px;
@@ -291,6 +292,7 @@ main div {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+    text-align: left;
 }
 .carrinho-card div h3{
     font-size: 12px;
