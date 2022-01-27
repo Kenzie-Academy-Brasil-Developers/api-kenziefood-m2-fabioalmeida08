@@ -1,20 +1,6 @@
 const espacoCards = document.querySelector('.espacoCards')
 let db = []
 class Produtos {
-<<<<<<< HEAD
-	// constructor() {
-	// 	this._produtos = []
-	// }
-
-	// get produtos() {
-	// 	return this._produtos
-	// }
-	// set produtos(nova) {
-	// 	this._produtos = nova
-	// }
-=======
-
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
 
 	static produtos = []
 
@@ -26,20 +12,23 @@ class Produtos {
 		let final = await produtos
 		db = final
 		Produtos.construirCard(db)
-<<<<<<< HEAD
-		console.log(db)
-=======
 	
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
 	}
 
 	static construirCard(arr) {
 		for (let i of arr) {
 			let card = document.createElement('div')
 			card.classList.add('card')
+
 			let imgProd = document.createElement('img')
 			imgProd.src = i.imagem
 			card.appendChild(imgProd)
+
+			let categoryButton = document.createElement('button')
+			categoryButton.classList.add('card-button')
+			categoryButton.innerText = i.categoria
+			card.appendChild(categoryButton)
+			
 
 			let cardText = document.createElement('div')
 			let h2 = document.createElement('h2')
@@ -51,19 +40,10 @@ class Produtos {
 			let h3 = document.createElement('h3')
 			h3.innerHTML = `R$ ${i.preco.toFixed(2)}`
 
-<<<<<<< HEAD
-			// let linkCarrinhoVerde = document.createElement('a')
-			let btnCarrinhoVerde = document.createElement('button')
-			btnCarrinhoVerde.innerHTML = ''
-			btnCarrinhoVerde.setAttribute('prodid', i.id)
-			// linkCarrinhoVerde.appendChild(btnCarrinhoVerde)
-
-=======
 			let btnCarrinhoVerde = document.createElement('button')
 			btnCarrinhoVerde.innerHTML = ''
 			btnCarrinhoVerde.setAttribute('prodid', i.id)
 			
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
 			cardTextBuy.appendChild(h3)
 			cardTextBuy.appendChild(btnCarrinhoVerde)
 
@@ -73,11 +53,7 @@ class Produtos {
 
 			card.appendChild(cardText)
 
-<<<<<<< HEAD
-			console.log(card)
-=======
 			
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
 
 			espacoCards.appendChild(card)
 		}

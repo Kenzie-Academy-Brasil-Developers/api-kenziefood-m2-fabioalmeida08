@@ -1,13 +1,4 @@
 import { Carrinho } from "./Carrinho.js";
-<<<<<<< HEAD
-import { Produtos , db} from "./Produto.js";
-const spacoCards = document.querySelector('.espacoCards')
-const campoBusca = document.querySelector('input')
-
-Produtos.criarPaginaInicial()
-Carrinho.addProduto(3)
-
-=======
 import { Produtos } from "./Produto.js";
 const spacoCards = document.querySelector('.espacoCards')
 const campoBusca = document.querySelector('input')
@@ -15,7 +6,9 @@ const todos = document.querySelector('#filtro-todos')
 const panificadora = document.querySelector('#filtro-panificadora')
 const frutas = document.querySelector('#filtro-frutas')
 const bebidas = document.querySelector('#filtro-bebidas')
+
 const cbody = document.querySelector('.carrinho-body')
+
 
 Produtos.criarPaginaInicial()
 
@@ -34,7 +27,6 @@ frutas.addEventListener('click' , () => {
 bebidas.addEventListener('click' , () => {
     Produtos.filtroCat('Bebidas')
 })
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
 campoBusca.addEventListener('keyup' , () => {
     let value = campoBusca.value
     Produtos.Busca(value)
@@ -46,9 +38,6 @@ spacoCards.addEventListener('click' , (e) => {
         let id = Number(tar.getAttribute('prodid'))
         Carrinho.addProduto(id)
     }
-<<<<<<< HEAD
-})
-=======
 })
 
 cbody.addEventListener('click' , (e) =>{
@@ -58,4 +47,3 @@ cbody.addEventListener('click' , (e) =>{
         Carrinho.removerProduto(id)
     }
 })
->>>>>>> 35f54417c7c963b0b5dcccd474b0c550595386b1
