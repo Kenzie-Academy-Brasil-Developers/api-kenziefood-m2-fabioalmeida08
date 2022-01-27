@@ -8,6 +8,7 @@ const frutas = document.querySelector('#filtro-frutas')
 const bebidas = document.querySelector('#filtro-bebidas')
 const logo = document.querySelector('#logo')
 const cbody = document.querySelector('.carrinho-body')
+const search = document.querySelector('#search')
 
 
 Produtos.criarPaginaInicial()
@@ -27,7 +28,13 @@ frutas.addEventListener('click' , () => {
 bebidas.addEventListener('click' , () => {
     Produtos.filtroCat('Bebidas')
 })
+
 campoBusca.addEventListener('keyup' , () => {
+    let value = campoBusca.value
+    Produtos.Busca(value)
+})
+
+search.addEventListener('click', () => {
     let value = campoBusca.value
     Produtos.Busca(value)
 })
