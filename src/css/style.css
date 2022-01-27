@@ -225,20 +225,20 @@ main div {
 	margin-left: 20px;
 }
 .carrinho-body {
-	/* border: 1px solid hotpink; */
     background-color: var(--cinza1);
     width: 340px;
     height: 432px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 18px;
     overflow-y: auto;
-    margin-bottom: 20px;
-}
+    margin-bottom: 1px;
+  }
+
 #input-pesquisa {
     border-radius: 33px;
     border: none;
@@ -285,6 +285,31 @@ main div {
     border: 1px solid black;
 }
 
+.carrinho-footer {
+	display: flex;
+	flex-flow: column;
+}
+.carrinho-quant {
+	display: flex;
+	font-weight: 700;
+	font-size: 12px;
+	align-items: center;
+	justify-content: space-between;
+	height: 58px;
+	flex-flow: row;
+	padding-left: 18px;
+	padding-right: 18px;
+    max-width: 340px;
+}
+
+.carrinho-footer :nth-child(odd) {
+	background-color: #f8f9fa;
+}
+
+button {
+    cursor: pointer;
+}
+
 @media (min-width:800px) {
     body {
         padding-left: 115px;
@@ -316,7 +341,7 @@ main div {
     .carrinho-body {
         height: 50vh;
 
-
+    }
 
 
 
