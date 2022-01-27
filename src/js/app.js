@@ -10,7 +10,7 @@ const logo = document.querySelector('#logo')
 const cbody = document.querySelector('.carrinho-body')
 const search = document.querySelector('#search')
 
-
+Carrinho.getStorage()
 Produtos.criarPaginaInicial()
 
 todos.addEventListener('click' , () => {
