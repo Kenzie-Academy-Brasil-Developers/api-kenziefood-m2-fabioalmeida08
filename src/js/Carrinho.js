@@ -34,6 +34,7 @@ class Carrinho {
 	
 	static getStorage(){
 		let produtos = JSON.parse(localStorage.getItem('prod'))
+		if(produtos === null) return
 		console.log(produtos)
 		if(produtos.length !== 0){
 		arrProduto = produtos
