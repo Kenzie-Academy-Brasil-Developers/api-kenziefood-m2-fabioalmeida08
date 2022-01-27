@@ -287,16 +287,20 @@ main div {
     align-items: flex-start;
     padding-left: 6px;
 }
-.carrinho-card div h2 {
+.carrinho-card div h2 {    
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+}
+.carrinho-card div h3{
+    font-size: 12px;
+    font-weight: normal;
 }
 .carrinho-card div p {
     color: var(--cinza3);
     font-size: 10px;
     line-height: 16px;
-    font-weight: 400;
+    font-weight: normal;
 }
 .carrinho-card button {
     order: 3;
