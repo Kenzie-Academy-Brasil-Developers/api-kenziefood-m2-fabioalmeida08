@@ -1,4 +1,3 @@
-
 import { Produtos, db } from './Produto.js'
 const arrProduto = []
 
@@ -103,7 +102,6 @@ class Carrinho {
 		this.reset()
 		arrProduto.forEach((produto) => {
 			const cbody = document.querySelector('.carrinho-body')
-			// cbody.innerHTML = '';
 
 			const carrinhoCard = document.createElement('div')
 			carrinhoCard.classList.add('carrinho-card')
