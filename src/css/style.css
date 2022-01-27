@@ -123,6 +123,7 @@ main div {
     display: flex;
     flex-flow: column;
     align-items: center;
+    color: #868E96;
 }
 .carrinho-empty img{
     width: 80px;
@@ -131,6 +132,11 @@ main div {
 }
 .carrinho-empty p{
     width: 200px;
+
+}
+.carrinho-empty h3{
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 #filtro-todos {
     min-width: 72px;
